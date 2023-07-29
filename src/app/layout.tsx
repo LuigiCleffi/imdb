@@ -1,3 +1,4 @@
+import { Header } from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 
@@ -13,10 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="favicon.ico" sizes='any' />
-      </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html >
   )
 }
