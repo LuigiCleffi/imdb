@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
+import Providers from './Providers'
 
 export const metadata: Metadata = {
   title: 'IMD Clone',
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html >
   )
