@@ -1,6 +1,31 @@
+import { Results } from "@/components/Results";
 
-export default function Home() {
+const API_KEY = process.env.API_KEY;
+
+interface HomeProps {
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+export default async function Home({ searchParams }: HomeProps) {
+  const genre = searchParams.genre || "fetchTrending";
+
+  const params = genre === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
+
+  const res = await fetch(`https://api.themoviedb.org/3/${params}?api_key=${API_KEY}&language=en-US`,
+    { next: { revalidate: 10000 } }
+  );
+
+  if (!res.ok) {
+    throw new Error('Something went wrong while fetching the data')
+  }
+  const data = await res.json();
+
+  const results = data.results
+
+  console.log(results)
+
   return (
-    <h1 className="text-red-900 font-bold text-3xl">HOME</h1>
-  )
+    <div>
+      <Results results={results} />
+    </div>
+  );
 }
