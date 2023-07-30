@@ -4,6 +4,7 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 import Link from "next/link";
 import DarkModeSwitch from "@/components/DarkModeSwitch";
 import MenuItem from "@/components/MenuItem";
+import { Input } from "@/components/Input";
 const Header = () => {
   return (
     <div className="flex justify-between mx-2 max-w-6xl sm:mx-auto items-center py-6">
@@ -14,6 +15,9 @@ const Header = () => {
           linkAddress="/about"
           Icon={BsFillInfoCircleFill}
         />
+      </div>
+      <div>
+        <Input type="search" />
       </div>
       <div className="flex items-center space-x-5">
         <DarkModeSwitch />

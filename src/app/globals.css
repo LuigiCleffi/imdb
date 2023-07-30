@@ -8,3 +8,8 @@ display: none;
 html{
 scrollbar-width: none;
 }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}

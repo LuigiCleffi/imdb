@@ -1,20 +1,8 @@
+import { Movie } from '@/infra/@types/api/movies';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import { FiThumbsUp } from 'react-icons/fi';
-
-interface Movie {
-  id: number;
-  title: string;
-  backdrop_path: string;
-  poster_path: string;
-  overview: string;
-  name: string;
-  release_date: string;
-  first_air_date: string;
-  vote_count: number;
-}
-
 
 interface CardProps {
   result: Movie;

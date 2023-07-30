@@ -1,17 +1,6 @@
 import Card from '@/components/Card';
+import { Movie } from '@/infra/@types/api/movies';
 import React from 'react'
-
-interface Movie {
-  id: number;
-  title: string;
-  backdrop_path: string;
-  poster_path: string;
-  overview: string;
-  name: string;
-  release_date: string;
-  first_air_date: string;
-  vote_count: number;
-}
 
 interface ResultsProps {
   results: Movie[];
