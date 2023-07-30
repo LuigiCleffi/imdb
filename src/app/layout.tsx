@@ -1,7 +1,8 @@
-import { Header } from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import Providers from './Providers'
+import { Header } from '@/infra/components/Header'
+import Navbar from '@/infra/components/Navbar'
 
 export const metadata: Metadata = {
   title: 'IMD Clone',
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <Header />
+          <Navbar />
           {children}
         </Providers>
       </body>

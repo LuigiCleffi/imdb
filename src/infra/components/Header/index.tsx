@@ -1,12 +1,12 @@
 import React from "react";
-import MenuItem from "../MenuItem";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import Link from "next/link";
-import DarkModeSwitch from "../DarkModeSwitch";
+import DarkModeSwitch from "@/components/DarkModeSwitch";
+import MenuItem from "@/components/MenuItem";
 const Header = () => {
   return (
-    <nav className="flex justify-between mx-2 max-w-6xl sm:mx-auto items-center py-6">
+    <div className="flex justify-between mx-2 max-w-6xl sm:mx-auto items-center py-6">
       <div className="flex">
         <MenuItem title="HOME" linkAddress="/" Icon={AiFillHome} />
         <MenuItem
@@ -24,7 +24,7 @@ const Header = () => {
           </h2>
         </Link>
       </div>
-    </nav>
+    </div>
   );
 };
 export { Header };
